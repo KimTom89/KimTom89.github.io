@@ -18,6 +18,7 @@
     </head>
 
     <style type="text/css" media="screen, print">
+        @charset "UTF-8";
         @font-face {
             font-family: 'DungGeunMo';
             font-style: normal;
@@ -26,7 +27,15 @@
                  url('static/css/font/DungGeunMo.woff') format('woff'),
                  url('static/css/font/DungGeunMo.eot') format('embedded-opentype');
         }
-        body { margin: 5rem 10rem; position: relative; font-family: "DungGeunMo", serif }
+
+        body { padding: 0 2rem; margin: 2rem 2rem; position: relative; font-family: "DungGeunMo", serif }
+
+        @media screen and (max-width: 768px) {
+            body {
+                margin: 2rem 0.5rem;
+                padding: 0;
+            }
+        }
     </style>
     <body>
         <div>
