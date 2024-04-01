@@ -1,13 +1,12 @@
 {
     "theme_color": "#4a90e2",
     "background_color": "#4a90e2",
-    "display": "browser",
+    "display": "standalone",
     "scope": "/",
-    // "start_url": "https://kimtom89.github.io/",
-    // "start_url": "http://localhost/KimTom89.github.io/",
     "start_url": "/",
     "name": "gnuboard6-pwa",
     "short_name": "g6-pwa",
+    "prefer_related_applications": true,
     "icons": [
         {
             "src": "static/image/icons/icon-192x192.png",
