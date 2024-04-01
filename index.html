@@ -1,94 +1,115 @@
 <!DOCTYPE html>
 
 <html lang="ko">
-    <title>PWA for GNUBOARD6</title>
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover">
-        <meta name="author" content="KimTom89">
-        <meta name="description" content="pwa for gnuboard6">
-        <meta name="keywords" content="html5,pwa,gnuboard6,8bit">
-        <meta name="msapplication-TileColor" content="#FF98BA"></meta>
-        
-        <link rel="icon" href="static/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="static/image/icons/icon-192x192.png"></link>
-        <link rel="manifest" href="manifest.json" />
-        <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-    </head>
+<title>PWA for GNUBOARD6</title>
 
-    <style type="text/css" media="screen, print">
-        @charset "UTF-8";
-        @font-face {
-            font-family: 'DungGeunMo';
-            font-style: normal;
-            font-weight: 400;
-            src: url('static/css/font/DungGeunMo.woff2') format('woff2'),
-                 url('static/css/font/DungGeunMo.woff') format('woff'),
-                 url('static/css/font/DungGeunMo.eot') format('embedded-opentype');
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover">
+    <meta name="author" content="KimTom89">
+    <meta name="description" content="pwa for gnuboard6">
+    <meta name="keywords" content="html5,pwa,gnuboard6,8bit">
+    <meta name="msapplication-TileColor" content="#FF98BA">
+    </meta>
+
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="static/image/icons/icon-192x192.png">
+    </link>
+    <link rel="manifest" href="manifest.json" />
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+</head>
+
+<style type="text/css" media="screen, print">
+    @charset "UTF-8";
+
+    @font-face {
+        font-family: 'DungGeunMo';
+        font-style: normal;
+        font-weight: 400;
+        src: url('static/css/font/DungGeunMo.woff2') format('woff2'),
+            url('static/css/font/DungGeunMo.woff') format('woff'),
+            url('static/css/font/DungGeunMo.eot') format('embedded-opentype');
+    }
+
+    body {
+        padding: 0 2rem;
+        margin: 2rem 2rem;
+        position: relative;
+        font-family: "DungGeunMo", serif
+    }
+
+    @media screen and (max-width: 768px) {
+        body {
+            margin: 2rem 0.5rem;
+            padding: 0;
         }
+    }
+</style>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service_worker.js').then(() => {
+            console.log('ServiceWorker Registered');
+        });
+    }
+</script>
 
-        body { padding: 0 2rem; margin: 2rem 2rem; position: relative; font-family: "DungGeunMo", serif }
+<body>
+    <div>
+        <span class="nes-text is-primary">Primary</span>
+        <span class="nes-text is-success">Success</span>
+        <span class="nes-text is-warning">Warning</span>
+        <span class="nes-text is-error">Error</span>
+        <span class="nes-text is-disabled">Disabled</span>
+    </div>
+    <div>
+        <label>
+            <input type="radio" class="nes-radio" name="answer" checked />
+            <span>Yes</span>
+        </label>
 
-        @media screen and (max-width: 768px) {
-            body {
-                margin: 2rem 0.5rem;
-                padding: 0;
-            }
-        }
-    </style>
-    <body>
-        <div>
-            <span class="nes-text is-primary">Primary</span>
-            <span class="nes-text is-success">Success</span>
-            <span class="nes-text is-warning">Warning</span>
-            <span class="nes-text is-error">Error</span>
-            <span class="nes-text is-disabled">Disabled</span>
-        </div>
-        <div>
+        <label>
+            <input type="radio" class="nes-radio" name="answer" />
+            <span>No</span>
+        </label>
+
+        <div style="background-color:#212529; padding: 1rem 0;">
             <label>
-                <input type="radio" class="nes-radio" name="answer" checked />
+                <input type="radio" class="nes-radio is-dark" name="answer-dark" checked />
                 <span>Yes</span>
-              </label>
-              
-              <label>
-                <input type="radio" class="nes-radio" name="answer" />
-                <span>No</span>
-              </label>
-              
-              <div style="background-color:#212529; padding: 1rem 0;">
-                <label>
-                  <input type="radio" class="nes-radio is-dark" name="answer-dark" checked />
-                  <span>Yes</span>
-                </label>
-              
-                <label>
-                  <input type="radio" class="nes-radio is-dark" name="answer-dark" />
-                  <span>No</span>
-                </label>
-              </div>
-        </div>
+            </label>
 
-        <div class="lists">
-            <ul class="nes-list is-disc">
-              <li>Good morning.</li>
-              <li>Thou hast had a good night's sleep, I hope.</li>
-              <li>Thou hast had a good afternoon</li>
-              <li>Good night.</li>
-            </ul>
-          </div>
-          
-        <div class="lists">
-            <ul class="nes-list is-circle">
-                <li>좋은 아침.</li>
-                <li>잘 자.</li>
-                <li>점심 먹었니?</li>
-                <li>굳밤.</li>
-            </ul>
+            <label>
+                <input type="radio" class="nes-radio is-dark" name="answer-dark" />
+                <span>No</span>
+            </label>
         </div>
-        <div>
-            <label for="textarea_field">Textarea</label>
-            <textarea id="textarea_field" class="nes-textarea"></textarea>
-        </div>
-    </body>
+    </div>
+
+    <div class="lists">
+        <ul class="nes-list is-disc">
+            <li>Good morning.</li>
+            <li>Thou hast had a good night's sleep, I hope.</li>
+            <li>Thou hast had a good afternoon</li>
+            <li>Good night.</li>
+        </ul>
+    </div>
+
+    <div class="lists">
+        <ul class="nes-list is-circle">
+            <li>좋은 아침.</li>
+            <li>잘 자.</li>
+            <li>점심 먹었니?</li>
+            <li>굳밤.</li>
+        </ul>
+    </div>
+    <div>
+        <label for="textarea_field">Textarea</label>
+        <textarea id="textarea_field" class="nes-textarea"></textarea>
+    </div>
+
+    <img class="nes-avatar is-large" alt="Gravatar image example" src="static/image/megaman.gif" style="image-rendering: pixelated;">
+    <img class="nes-avatar is-large" alt="Gravatar image example" src="static/image/shooting.gif" style="image-rendering: pixelated;">
+</body>
+
 </html>
