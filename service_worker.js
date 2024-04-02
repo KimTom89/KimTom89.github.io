@@ -4,8 +4,8 @@ self.addEventListener('activate', function(e) {
     return self.clients.claim();
 })
 self.addEventListener('fetch', function(e) {
-    console.log("Fetch : " + e.request.url);
-    if (e.request.url.indexOf(".gif") > -1) {
-        e.respondWith(fetch("static/image/megaman22.gif"));
-    }
+    // console.log("Fetch : " + e.request.url);
+    // if (e.request.url.indexOf(".gif") > -1) {
+    //     e.respondWith(fetch("static/image/megaman22.gif"));
+    // }
 })
