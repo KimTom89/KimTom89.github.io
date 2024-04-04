@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<title>PWA for GNUBOARD6</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover">
+    <meta name="author" content="KimTom89">
+    <meta name="description" content="pwa for gnuboard6">
+    <meta name="keywords" content="html5,pwa,gnuboard6,8bit">
+    <meta name="msapplication-TileColor" content="#FF98BA">
+
+    <link rel="icon" href="http://127.0.0.1/KimTom89.github.io/static/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="static/image/icons/icon-192x192.png">
+    <link rel="manifest" href="http://127.0.0.1/KimTom89.github.io/manifest.json">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1/KimTom89.github.io/static/css/style.css" rel="stylesheet">
+
+    <script src="http://127.0.0.1/KimTom89.github.io/static/js/index.js"></script>
+</head>
+<body>
+    <form id="form_policy_agree" action="./sign_up.html" onsubmit="return policy_submit();" method="post" autocomplete="off">
+        <section class="topic"><h2 id="policy"><a href="#policy">#</a>회원가입약관 동의</h2></section>
+        회원가입약관 및 개인정보 수집 및 이용의 내용에 동의하셔야 회원가입 하실 수 있습니다.
+        <section class="nes-container with-title showcase" id="section_policy">
+            <h3 class="title">회원가입약관</h3>
+            <textarea id="policy_content" class="nes-textarea" style="height:260px;" disabled></textarea>
+            <label for="check_stipulation">
+                <input type="checkbox" class="nes-checkbox check-agree" value="true" id="check_stipulation">
+                <span>회원가입약관의 내용에 동의합니다.</span>
+            </label>
+        </section>
+
+        <section class="nes-container with-title showcase" id="section_privacy">
+            <h3 class="title">개인정보 수집 및 이용</h3>
+            <table class="nes-table is-bordered is-centered">
+                <thread>
+                    <tr>
+                        <th width="35%">목적</th>
+                        <th width="35%">항목</th>
+                        <th width="30%">보유기간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>이용자 식별 및 본인여부 확인</td>
+                        <td>아이디, 이름, 비밀번호</td>
+                        <td>회원 탈퇴 시까지</td>
+                    </tr>
+                    <tr>
+                        <td>고객서비스 이용에 관한 통지,<br>CS대응을 위한 이용자 식별</td>
+                        <td>연락처 (이메일, 휴대전화번호)</td>
+                        <td>회원 탈퇴 시까지</td>
+                    </tr>
+                </tbody>
+            </table>
+            <label for="check_privacy">
+                <input type="checkbox" class="nes-checkbox check-agree" value="true" id="check_privacy">
+                <span>개인정보 수집 및 이용의 내용에 동의합니다.</span>
+            </label>
+        </section>
+
+        <div>
+            <label for="check_all">
+                <input type="checkbox" class="nes-checkbox" value="true" id="check_all">
+                <span>회원가입 약관에 모두 동의합니다.</span>
+            </label>
+        </div>
+
+        <div>
+            <a href="javascript:history.back();" class="nes-btn">Cancel</a>
+            <button type="submit" class="nes-btn is-primary" id="btn_policy_submit">Next</button>
+        </div>
+    </form>
+
+    <script>
+        $check_stipulation = document.getElementById('check_stipulation');
+        $check_privacy = document.getElementById('check_privacy');
+
+        function policy_submit() {
+            if (!$check_stipulation.checked) {
+                alert("회원가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다.");
+                $check_stipulation.focus();
+                return false;
+            }
+
+            if (!$check_privacy.checked) {
+                alert("개인정보 수집 및 이용의 내용에 동의하셔야 회원가입 하실 수 있습니다.");
+                $check_privacy.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+    <script src="http://127.0.0.1/KimTom89.github.io/static/js/member.js"></script>
+    <script>
+        window.onload = function() {
+            getPolicy();
+
+            $check_all = document.getElementById('check_all');
+            $check_all.addEventListener('change', function() {
+                document.querySelectorAll('.check-agree')
+                    .forEach((checkbox) => { checkbox.checked = $check_all.checked })
+            });
+        }
+    </script>
+</body>
+
+</html>

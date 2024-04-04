@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<title>PWA for GNUBOARD6</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover">
+    <meta name="author" content="KimTom89">
+    <meta name="description" content="pwa for gnuboard6">
+    <meta name="keywords" content="html5,pwa,gnuboard6,8bit">
+    <meta name="msapplication-TileColor" content="#FF98BA">
+
+    <link rel="icon" href="http://127.0.0.1/KimTom89.github.io/static/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="static/image/icons/icon-192x192.png">
+    <link rel="manifest" href="http://127.0.0.1/KimTom89.github.io/manifest.json">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1/KimTom89.github.io/static/css/style.css" rel="stylesheet">
+
+    <script src="http://127.0.0.1/KimTom89.github.io/static/js/index.js"></script>
+</head>
+<body>
+    <section class="topic"><h2 id="sign-up-result"><a href="#sign-up-result">#</a>회원가입 완료</h2></section>
+    <span id="nickname"></span>님의 회원가입을 진심으로 축하합니다.
+    <section class="nes-container with-title showcase" id="section_policy">
+        <h3 class="title">회원가입약관</h3>
+            회원님의 비밀번호는 아무도 알 수 없는 암호화 코드로 저장되므로 안심하셔도 좋습니다.
+            아이디, 비밀번호 분실시에는 회원가입시 입력하신 이메일 주소를 이용하여 찾을 수 있습니다.
+            <br>
+            <br>
+            회원 탈퇴는 언제든지 가능하며 일정기간이 지난 후, 회원님의 정보는 삭제하고 있습니다.
+            감사합니다.
+    </section>
+
+    <div>
+        <a href="../index.html" class="nes-btn is-primary">Main</a>
+    </div>
+
+    <script src="http://127.0.0.1/KimTom89.github.io/static/js/member.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById('nickname').innerText = new URLSearchParams(location.search).get("mb_nick");
+        }
+    </script>
+</body>
+
+</html>

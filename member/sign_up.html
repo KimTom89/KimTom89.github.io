@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<title>PWA for GNUBOARD6</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover">
+    <meta name="author" content="KimTom89">
+    <meta name="description" content="pwa for gnuboard6">
+    <meta name="keywords" content="html5,pwa,gnuboard6,8bit">
+    <meta name="msapplication-TileColor" content="#FF98BA">
+
+    <link rel="icon" href="http://127.0.0.1/KimTom89.github.io/static/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="static/image/icons/icon-192x192.png">
+    <link rel="manifest" href="http://127.0.0.1/KimTom89.github.io/manifest.json">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1/KimTom89.github.io/static/css/style.css" rel="stylesheet">
+
+    <script src="http://127.0.0.1/KimTom89.github.io/static/js/index.js"></script>
+</head>
+<body>
+    <section class="topic"><h2 id="policy"><a href="#policy">#</a>회원가입</h2></section>
+        
+    <section class="nes-container with-title showcase" id="section_account">
+        <h3 class="title">사이트 이용정보 입력</h3>
+        
+        <div class="nes-field">
+            <label for="mb_id">ID</label>
+            <input type="text" name="mb_id" id="mb_id" class="nes-input" value="test1234567">
+            <label for="password">Password</label>
+            <input type="password" name="mb_password" id="mb_password" class="nes-input" value="test1234567">
+            <label for="password_confirm">Password Confirm</label>
+            <input type="password" name="mb_password_confirm" id="mb_password_confirm" class="nes-input" value="test1234567">
+        </div>
+    </section>
+
+    <section class="nes-container with-title showcase" id="section_infomation">
+        <h3 class="title">개인정보 입력</h3>
+
+        <div class="nes-field">
+            <label for="mb_name">이름</label>
+            <input type="text" name="mb_name" id="mb_name" class="nes-input" value="test1234567">
+            <label for="mb_nick">별명</label>
+            <input type="text" name="mb_nick" id="mb_nick" class="nes-input" value="test1234567">
+            <label for="mb_email">E-mail</label>
+            <input type="text" name="mb_email" id="mb_email" class="nes-input" value="test1234567@test1234567.com">
+        </div>
+
+        <div class="nes-field">
+            <label for="mb_zip">우편번호</label>
+            <input type="text" id="mb_zip" class="nes-input" style="width:50%;">
+            <button type="button" class="nes-btn">주소 검색</button>
+
+            <label for="reg_mb_addr1">기본주소</label>
+            <input type="text" id="reg_mb_addr1" class="nes-input">
+            <label for="mb_addr2">상세주소</label>
+            <input type="text" id="mb_addr2" class="nes-input">
+            <label for="reg_mb_addr3">참고항목</label>
+            <input type="text" id="reg_mb_addr3" class="nes-input" disabled>
+        </div>
+    </section>
+
+    <section class="nes-container with-title showcase" id="section_etc">
+        <h3 class="title">기타정보 설정 및 입력</h3>
+        
+        <div class="nes-field">
+            <label for="mb_image">회원 이미지</label>
+            <label class="nes-btn">
+                <span>파일 선택</span>
+                <input type="file" name="mb_image" id="mb_image">
+            </label>
+            <label for="mb_icon">회원 아이콘</label>
+            <label class="nes-btn">
+                <span>파일 선택</span>
+                <input type="file" name="mb_icon" id="mb_icon">
+            </label>
+        </div>
+
+        <div style="background-color:#212529; padding: 1rem 1rem;">
+            <label>
+                <input type="checkbox" class="nes-checkbox is-dark" id="check_mailling" checked/>
+                <span>정보 메일을 받겠습니다.</span>
+            </label>
+        </div>
+        <div style="background-color:#212529; padding: 1rem 1rem;">
+            <label>
+                <input type="checkbox" class="nes-checkbox is-dark" id="check_open" checked/>
+                <span>다른분들이 나의 정보를 볼 수 있도록 합니다. <br> 정보공개를 바꾸시면 앞으로 10일 이내에는 변경이 안됩니다.</span>
+            </label>
+        </div>
+        <div class="nes-field">
+            <label for="mb_recommend">추천인 입력</label>
+            <input type="text" id="mb_recommend" class="nes-input" placeholder="추천인 아이디">
+        </div>
+    </section>
+
+    <div>
+        <a href="javascript:history.back();" class="nes-btn">Cancel</a>
+        <button type="button" class="nes-btn is-primary" id="btn_policy_submit" onclick="memberSignUp();">Sign Up</button>
+    </div>
+
+    <script src="http://127.0.0.1/KimTom89.github.io/static/js/member.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" async></script>
+    <script>
+        window.onload = function() {
+            getSignUpConfig();
+        }
+    </script>
+</body>
+
+</html>

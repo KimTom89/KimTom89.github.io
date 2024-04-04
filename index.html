@@ -12,88 +12,16 @@
     <meta name="keywords" content="html5,pwa,gnuboard6,8bit">
     <meta name="msapplication-TileColor" content="#FF98BA">
 
-    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://127.0.0.1/KimTom89.github.io/static/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="static/image/icons/icon-192x192.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="http://127.0.0.1/KimTom89.github.io/manifest.json">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1/KimTom89.github.io/static/css/style.css" rel="stylesheet">
+
+    <script src="http://127.0.0.1/KimTom89.github.io/static/js/index.js"></script>
 </head>
-
-<style type="text/css" media="screen, print">
-    @charset "UTF-8";
-
-    @font-face {
-        font-family: 'DungGeunMo';
-        font-style: normal;
-        font-weight: 400;
-        src: url('static/css/font/DungGeunMo.woff2') format('woff2'),
-            url('static/css/font/DungGeunMo.woff') format('woff'),
-            url('static/css/font/DungGeunMo.eot') format('embedded-opentype');
-    }
-
-    body {
-        padding: 0 2rem;
-        margin: 2rem 2rem;
-        position: relative;
-        font-family: "DungGeunMo", serif
-    }
-
-    .showcase {
-        margin-top: 2rem;
-    }
-
-    /* coreteam */
-    .coreteam-members {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .nes-container.member-card {
-        display: flex;
-        padding: 1rem 1.5rem;
-        width: 470px;
-        margin-bottom: 2rem;
-    }
-
-    .member-card .avatar > img {
-        display: block;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-    }
-    .member-card > .profile {
-        margin-left: 1.5rem;
-    }
-    .member-card > .profile > .name {
-        font-size: 20px;
-    }
-
-    @media screen and (max-width: 768px) {
-        body {
-            margin: 2rem 0.5rem;
-            padding: 0;
-        }
-    }
-</style>
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service_worker.js').then(() => {
-            console.log('ServiceWorker Registered');
-        });
-    }
-
-    const url = "http://localhost:8000";
-    const api_version = "v1";
-    const api_url = url + "/api/" + api_version;
-
-    window.onload = function() {
-        checkLogin();
-
-        $btn_login.addEventListener("click", memberLogin);
-        $btn_logout.addEventListener("click", memberLogout);
-    }
-</script>
-
 <body>
+    <section class="topic"><h2 id="index"><a href="#index">#</a>메인페이지</h2></section>
     <section class="nes-container with-title" id="section_login">
         <h3 class="title">Join Us</h3>
         <div class="nes-field">
@@ -110,7 +38,10 @@
                 <span>Remember Me</span>
             </label>
         </div>
-        <button type="button" class="nes-btn is-primary" id="btn_login">Login</button>
+        <div class="nes-field">
+            <button type="button" class="nes-btn" id="btn_login">Login</button>
+            <button type="button" class="nes-btn is-primary" id="btn_sign_up">Sign Up</button>
+        </div>
     </section>
     <section class="nes-container with-title showcase" id="section_profile" style="display: none;">
         <h3 class="title">Profile</h3>
@@ -206,7 +137,7 @@
     <img class="nes-avatar is-large" alt="Gravatar image example" src="static/image/megaman.gif" style="image-rendering: pixelated;">
     <img class="nes-avatar is-large" alt="Gravatar image example" src="static/image/shooting.gif" style="image-rendering: pixelated;">
 
-    <script src="static/js/member.js"></script>
+    <script src="http://127.0.0.1/KimTom89.github.io/static/js/member.js"></script>
 </body>
 
 </html>
